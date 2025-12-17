@@ -2,6 +2,7 @@ import { InferSelectModel } from "drizzle-orm";
 import { boolean, pgEnum, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 import { nanoid } from "nanoid";
 import { DEPARTMENTS } from "~/constants/core.departments";
+import { houses } from "./house-schema";
 
 export const departmentNameEnum = pgEnum("department_name_enum", [
   "Staff",
@@ -51,6 +52,10 @@ export const users = pgTable("users", {
     .default("not_specified")
     .$defaultFn(() => "not_specified"),
   department: departmentNameEnum("department").notNull(),
+  house: text("house").references(() => houses.name),
+  hasCompletedSorting: boolean("hasCompletedSorting")
+    .notNull()
+    .default(false),
 });
 
 export type UserType = InferSelectModel<typeof users>;

@@ -38,6 +38,7 @@ interface ICommunityPost extends Document {
   savedBy: string[]; // Updated type from string[] to string[]
   updatedAt: Date;
   createdAt: Date;
+  house?: 'Gryffindor' | 'Slytherin' | 'Ravenclaw' | 'Hufflepuff';
 }
 
 const communityPostSchema = new Schema<ICommunityPost>(
@@ -55,6 +56,7 @@ const communityPostSchema = new Schema<ICommunityPost>(
       username: { type: String, required: true },
     },
     subCategory: { type: String, enum: SUB_CATEGORY_TYPES, default: null },
+    house: { type: String, enum: ['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'], default: null },
   },
   {
     timestamps: true,

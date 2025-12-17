@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getPostsByCategory } from "~/actions/common.community";
+import { getCommunityPosts } from "~/actions/common.community";
 import { getSession } from "~/auth/server";
 import CommunityPostList from "./list";
 
@@ -37,7 +37,7 @@ export default async function CommunitiesPage(props: {
 
   const session = await getSession();
 
-  const posts = await getPostsByCategory(category, page, limit);
+  const posts = await getCommunityPosts(category, page, limit);
   const activeCategory = CATEGORIES.find((c) => c.value === category);
 
   return (

@@ -4,6 +4,7 @@ import { appConfig, supportLinks } from "~/project.config";
 import { ApplicationInfo } from "../logo";
 import GithubStars from "./github";
 import { ThemePopover, ThemeSwitcher } from "./theme-switcher";
+import { title } from "process";
 
 const footerSections = [
   {
@@ -20,6 +21,7 @@ const footerSections = [
       { title: "Contact", href: "/contact" },
       { title: "Terms of Service", href: "/terms" },
       { title: "Privacy Policy", href: "/privacy-policy" },
+      { title: "Cookie Policy", href: "/sorting" },
       { title: "Features", href: "/#features" },
     ],
   },
