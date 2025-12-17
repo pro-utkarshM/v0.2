@@ -206,11 +206,11 @@ export const betterAuthOptions = {
 
   plugins: [
     username(),
-    // admin({
-    //   defaultRole: "user",
-    //   adminRole: ["admin"],
-    //   defaultBanExpiresIn: 60 * 60 * 24 * 7, // 1 week
-    // }),
+    admin({
+      defaultRole: "user",
+      adminRole: ["admin"],
+      defaultBanExpiresIn: 60 * 60 * 24 * 7, // 1 week
+    }),
     haveIBeenPwned({
       customPasswordCompromisedMessage: "Please choose a more secure password.",
     }),

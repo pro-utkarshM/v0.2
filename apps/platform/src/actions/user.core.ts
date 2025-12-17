@@ -11,7 +11,6 @@ import { accounts, sessions, users } from "~/db/schema/auth-schema";
 import dbConnect from "~/lib/dbConnect";
 import Announcement from "~/models/announcement";
 import CommunityPost, { CommunityComment } from "~/models/community";
-import { HostelStudentModel } from "~/models/hostel_n_outpass";
 import PollModel from "~/models/poll";
 
 // Infer the user model type from the schema
@@ -119,9 +118,7 @@ export async function deleteUserResourcesById(userId: string): Promise<void> {
           "author.id": userId,
         });
         console.log("Deleted CommunityComment for user:", userId);
-        await HostelStudentModel.deleteMany({
-          userId: userId,
-        });
+       
         console.log("Deleted HostelStudentModel for user:", userId);
         await PollModel.deleteMany({
           createdBy: userId,

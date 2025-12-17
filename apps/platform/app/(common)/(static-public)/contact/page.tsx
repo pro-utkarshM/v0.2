@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
           <Badge variant="outline" className="rounded-full py-1.5 px-4 border-primary/20 bg-primary/5 text-primary">
             <Globe className="mr-2 size-3" />
-            The Internet's Messiest Corner
+            The {`Internet's`} Messiest Corner
           </Badge>
           
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
@@ -59,7 +59,7 @@ export default function AboutPage() {
               <div>
                  <h3 className="text-base font-semibold text-foreground mb-1">Community Driven</h3>
                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    This platform is a <strong>student-run initiative</strong>. We are here to help you build cool stuff, find teammates, and ship projects. If you find a bug, don't panic—it's a feature.
+                    This platform is a <strong>student-run initiative</strong>. We are here to help you build cool stuff, find teammates, and ship projects. If you find a bug, {`don't panic—it's `}a feature.
                  </p>
               </div>
            </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                         Complete transparency. Our code is open for anyone to audit, fork, or improve.
                     </FeatureRow>
                     <FeatureRow Icon={HeartHandshake} title="No Gatekeeping">
-                        Whether you're a senior dev or writing your first Hello World, you belong here.
+                        Whether you{"'"}re a senior dev or writing your first Hello World, you belong here.
                     </FeatureRow>
                 </div>
             </div>

@@ -21,3 +21,4 @@ export {
 } from "./schema/course";
 // export { global_events } from "./schema/events";
 export { rooms, roomUsageHistory } from "./schema/room";
+export { houses, questions, answers } from "./schema/house-schema";

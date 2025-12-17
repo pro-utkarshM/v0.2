@@ -15,6 +15,9 @@ import CommunityPost, {
     rawCommunityCommentSchema,
 } from "~/models/community";
 
+import { db } from "~/db/connect";
+import { users } from "~/db/schema/auth-schema";
+import { eq } from "drizzle-orm";
 // Create a new post
 export async function createPost(postData: RawCommunityPostType) {
   const parsed = rawCommunityPostSchema.safeParse(JSON.parse(JSON.stringify(postData)));
@@ -29,6 +32,16 @@ export async function createPost(postData: RawCommunityPostType) {
     return Promise.reject("You need to be logged in to create a post");
   }
 
+  const user = await db
+    .select({ house: users.house })
+    .from(users)
+    .where(eq(users.id, session.user.id))
+    .limit(1);
+
+  if (!user || user.length === 0 || !user[0].house) {
+    return Promise.reject("User not found or house not assigned.");
+  }
+
   try {
     await dbConnect();
     const cumPost = {
@@ -38,7 +51,8 @@ export async function createPost(postData: RawCommunityPostType) {
         name: session.user.name,
         username: session.user.username,
       },
-      views:0
+      views:0,
+      house: user[0].house,
     }
     console.log("Creating post with data:", cumPost);
     const post = await CommunityPost.create(cumPost);
@@ -55,15 +69,34 @@ export async function createPost(postData: RawCommunityPostType) {
 }
 
 // Get posts by category and pagination
-export async function getPostsByCategory(
+export async function getCommunityPosts(
   category: string,
   page: number,
   limit: number
 ): Promise<CommunityPostTypeWithId[]> {
+  const headersList = await headers();
+  const session = await auth.api.getSession({
+    headers: headersList,
+  });
+  if (!session) {
+    return Promise.reject("You need to be logged in to view posts");
+  }
+
+  const user = await db
+    .select({ house: users.house })
+    .from(users)
+    .where(eq(users.id, session.user.id))
+    .limit(1);
+
+  if (!user || user.length === 0 || !user[0].house) {
+    return Promise.reject("User not found or house not assigned.");
+  }
+
   try {
     await dbConnect();
     const posts = await CommunityPost.find({
       category: category === "all" ? { $exists: true } : category,
+      house: user[0].house, // Filter by user's assigned house
     })
       .sort({ createdAt: -1 })
       .skip((page - 1) * limit)

@@ -106,7 +106,7 @@ export function IntroSection({
           {/* Headlines */}
           <StaggerChildrenItem>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground text-balance">
-              the <span className="bg-linear-to-l from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-transparent">internet's messiest,</span> <br className="hidden lg:block"/>
+              the <span className="bg-linear-to-l from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-transparent">internet{"'"}s messiest,</span> <br className="hidden lg:block"/>
               <span className="bg-linear-to-l from-emerald-500 from-10% via-sky-500 via-30% to-indigo-500 to-90% bg-clip-text text-transparent">nerdiest corner.</span> <br className="hidden lg:block"/>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 text-balance leading-relaxed">
@@ -162,113 +162,6 @@ export function IntroSection({
   );
 }
 
-// export function HeroBentoMockup() {
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, rotateX: 10, rotateY: -10, scale: 0.9 }}
-//       animate={{ opacity: 1, rotateX: 0, rotateY: 0, scale: 1 }}
-//       transition={{ duration: 0.8, type: "spring" }}
-//       className="relative w-full max-w-2xl mx-auto lg:mr-0 select-none"
-//     >
-//         {/* Main Dashboard Card (The "Base") */}
-//         <div className="relative rounded-2xl border border-border/60 bg-background/80 backdrop-blur-xl shadow-2xl overflow-hidden">
-//             {/* Fake Header */}
-//             <div className="h-10 border-b border-border/40 flex items-center px-4 gap-2 bg-muted/20">
-//                 <div className="flex gap-1.5">
-//                     <div className="size-3 rounded-full bg-red-400/80" />
-//                     <div className="size-3 rounded-full bg-yellow-400/80" />
-//                     <div className="size-3 rounded-full bg-green-400/80" />
-//                 </div>
-//                 <div className="mx-auto w-1/3 h-2 rounded-full bg-muted/50" />
-//             </div>
-
-//             {/* Dashboard Content */}
-//             <div className="p-6 grid grid-cols-3 gap-4">
-//                 {/* Widget */}
-//                 <div className="col-span-2 p-4 rounded-xl bg-card border border-border/40 shadow-sm space-y-3">
-//                     <div className="flex items-center justify-between">
-//                         <div className="flex items-center gap-2">
-//                              <div className="p-1.5 bg-primary/10 rounded-md">
-//                                 <GraduationCap className="size-4 text-primary" />
-//                             </div>
-//                             <span className="text-sm font-semibold">Current CGPA</span>
-//                         </div>
-//                         <Badge variant="default" className="text-[10px]">Sem 5</Badge>
-//                     </div>
-//                     <div className="flex items-end gap-2">
-//                         <span className="text-3xl font-bold tracking-tighter">9.42</span>
-//                         <span className="text-xs text-muted-foreground mb-1">/ 10.0</span>
-//                     </div>
-//                     <div className="h-1.5 w-full bg-muted rounded-full overflow-hidden">
-//                         <div className="h-full w-[94%] bg-primary rounded-full" />
-//                     </div>
-//                 </div>
-
-//                 {/* Date Widget */}
-//                 <div className="col-span-1 p-4 rounded-xl bg-primary/10 text-primary shadow-sm flex flex-col justify-between items-center text-center">
-//                      <CalendarDays className="size-6 opacity-80" />
-//                      <div>
-//                          <span className="text-2xl font-bold block">28</span>
-//                          <span className="text-xs opacity-80 uppercase font-medium">Nov</span>
-//                      </div>
-//                 </div>
-
-//                 {/* Resource List */}
-//                 <div className="col-span-3 p-4 rounded-xl bg-card border border-border/40 shadow-sm space-y-3">
-//                      <div className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Recent Resources</div>
-//                      {[1, 2].map((i) => (
-//                          <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors cursor-default">
-//                              <div className="size-8 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
-//                                  <FileText className="size-4" />
-//                              </div>
-//                              <div className="flex-1">
-//                                  <div className="h-2 w-3/4 bg-muted-foreground/20 rounded mb-1.5" />
-//                                  <div className="h-1.5 w-1/2 bg-muted-foreground/10 rounded" />
-//                              </div>
-//                          </div>
-//                      ))}
-//                 </div>
-//             </div>
-//         </div>
-
-//         {/* Floating "Notification" Card - Top Right */}
-//         <motion.div 
-//             animate={{ y: [0, -10, 0] }}
-//             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-//             className="absolute -right-8 -top-8 w-48 p-3 rounded-xl border border-border bg-card shadow-xl z-20 hidden sm:block"
-//         >
-//             <div className="flex gap-3 items-start">
-//                 <div className="size-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-600 shrink-0">
-//                     <CheckCircle2 className="size-4" />
-//                 </div>
-//                 <div>
-//                     <p className="text-xs font-bold">Outpass Approved!</p>
-//                     <p className="text-[10px] text-muted-foreground mt-0.5">
-//                         Approved by Warden. Have a great time!
-//                     </p>
-//                 </div>
-//             </div>
-//         </motion.div>
-
-//         {/* Floating "Event" Card - Bottom Left */}
-//         <motion.div 
-//              animate={{ y: [0, 10, 0] }}
-//              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-//              className="absolute -left-8 -bottom-8 w-52 p-3 rounded-xl border border-border bg-card shadow-xl z-20 hidden sm:block"
-//         >
-//              <div className="flex gap-3 items-center">
-//                  <div className="size-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-600 shrink-0">
-//                      <Bell className="size-4" />
-//                  </div>
-//                  <div>
-//                      <p className="text-xs font-bold">Exam Schedule</p>
-//                      <p className="text-[10px] text-muted-foreground mt-0.5">Finals start in 3 days.</p>
-//                  </div>
-//              </div>
-//         </motion.div>
-//     </motion.div>
-//   );
-// }
 
 export function HeroBentoMockup() {
   return (
@@ -342,7 +235,7 @@ export function HeroBentoMockup() {
                              <GitMerge className="size-4" />
                          </div>
                          <div className="flex-1 min-w-0">
-                             <div className="text-xs font-medium text-gray-200 truncate">Merged PR: "Landing Page v1"</div>
+                             <div className="text-xs font-medium text-gray-200 truncate">Merged PR: {`"Landing Page v1"`}</div>
                              <div className="text-[10px] text-gray-500">Just now • +50 pts</div>
                          </div>
                      </div>
@@ -374,7 +267,7 @@ export function HeroBentoMockup() {
                 <div>
                     <p className="text-xs font-bold text-white">Project Approved</p>
                     <p className="text-[10px] text-gray-400 mt-0.5">
-                        Your project "Campus Connect" is live!
+                        Your project {`"Campus Connect" `}is live!
                     </p>
                 </div>
             </div>
@@ -418,7 +311,7 @@ export function FeatureSection() {
               </span>
             </h2>
             <p className="text-lg text-muted-foreground text-balance">
-              Stop waiting for "someday" and start building today. Here's how The Nerdy Network helps you go from idea to reality.
+              Stop waiting for {`"someday"`} and start building today. Here{"'"}s how The Nerdy Network helps you go from idea to reality.
             </p>
           </div>
 
@@ -442,7 +335,7 @@ export function FeatureSection() {
                  <div>
                     <h3 className="text-xl font-bold">Everything Connected</h3>
                     <p className="text-sm text-muted-foreground mt-2">
-                        Join. Build. Grow. It's that simple.
+                        Join. Build. Grow. Its that simple.
                     </p>
                  </div>
                  <ButtonLink variant="outline" size="sm" href="/about">

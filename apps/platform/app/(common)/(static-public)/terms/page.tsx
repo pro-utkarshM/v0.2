@@ -89,7 +89,7 @@ export default function TermsPage() {
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
             By accessing <strong>Nerdy Network</strong>, you agree to the following terms. 
-            Basically: play nice, don't hack us maliciously, and remember that code sometimes breaks.
+            Basically: play nice, {`don't `}hack us maliciously, and remember that code sometimes breaks.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export default function TermsPage() {
               <ul>
                 <li><strong>DDOS or Stress Test</strong> our servers without permission.</li>
                 <li>Post hate speech, harassment, or spam in community channels.</li>
-                <li>Create bots to artificially inflate your "Build Streak."</li>
+                <li>Create bots to artificially inflate your {`"Build Streak."`}</li>
                 <li>Attempt to reverse engineer proprietary features.</li>
               </ul>
               <p>Violating these rules will result in a permanent ban and public shaming in the logs.</p>
@@ -151,7 +151,7 @@ export default function TermsPage() {
             <section id="gamification">
                <h2>4. House Points & Gaming Logic</h2>
                <p>
-                 "House Points," "Streaks," and "Badges" have no real-world monetary value. 
+                 {`"House Points," "Streaks," and "Badges" `}have no real-world monetary value. 
                  We reserve the right to reset leaderboards, rebalance point logic, or 
                  nerf your House if it becomes too OP (Overpowered).
                </p>
@@ -172,7 +172,7 @@ export default function TermsPage() {
                <h2>6. Advertising & Affiliate Links</h2>
                <p>
                  To pay for servers (and coffee), we may display third-party ads (e.g., Google AdSense) 
-                 or affiliate links. We aren't responsible for the content of external sites.
+                 or affiliate links. We aren{"`"}t responsible for the content of external sites.
                </p>
                <div className="not-prose my-6">
                  <AdUnit adSlot="multiplex" />
@@ -226,7 +226,7 @@ export default function TermsPage() {
             <section id="changes">
                <h2>12. Patch Notes (Changes to Terms)</h2>
                <p>
-                 We may push updates to these Terms. Continued use of the Site after a "patch" 
+                 We may push updates to these Terms. Continued use of the Site after a {`"patch"`} 
                  constitutes acceptance of the new version.
                </p>
             </section>

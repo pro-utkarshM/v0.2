@@ -73,7 +73,7 @@ export default function AboutPage() {
               variants={fadeInUp}
               className="text-5xl lg:text-7xl font-bold tracking-tight text-foreground text-balance"
             >
-              The Internet's Messiest, <br />
+              The Internet{"'"}s Messiest, <br />
               <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Nerdiest Corner.
               </span>
@@ -84,7 +84,7 @@ export default function AboutPage() {
               variants={fadeInUp}
               className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed text-balance"
             >
-              We are a community for student builders who talk to their laptops like they're alive.
+              We are a community for student builders who talk to their laptops like they{"'"}re alive.
               Code, create, collaborate, and compete for glory.
             </motion.p>
 
@@ -128,7 +128,7 @@ export default function AboutPage() {
         >
           <div className="flex flex-col items-center text-center space-y-2 mb-10">
             <h2 className="text-3xl font-semibold tracking-tight">How It Works</h2>
-            <p className="text-muted-foreground">Stop waiting for "someday" and start building today.</p>
+            <p className="text-muted-foreground">Stop waiting for {`"someday"`} and start building today.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -176,7 +176,7 @@ export default function AboutPage() {
             <div className="lg:col-span-4 space-y-6">
               <h2 className="text-3xl font-semibold tracking-tight">Built specifically <br /> for Builders.</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                We didn't just build a social network. We built a productivity engine wrapped in a game.
+                We {`didn't`} just build a social network. We built a productivity engine wrapped in a game.
                 Powered by a modern, type-safe stack.
               </p>
               <Link href="/docs" className="inline-flex items-center text-primary font-medium hover:underline">

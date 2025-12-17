@@ -1,3 +1,6 @@
+import { db } from "~/db/connect";
+import { users } from "~/db/schema/auth-schema";
+import { eq } from "drizzle-orm";
 import { betterFetch } from "@better-fetch/fetch";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
@@ -62,6 +65,23 @@ export async function middleware(request: NextRequest) {
       },
     }
   );
+
+  // After session is fetched, check for sorting completion
+  if (session?.user?.id) {
+    const user = await db
+      .select({ hasCompletedSorting: users.hasCompletedSorting })
+      .from(users)
+      .where(eq(users.id, session.user.id))
+      .limit(1);
+
+    if (user.length > 0 && !user[0].hasCompletedSorting) {
+      // If user hasn't completed sorting and is not on the sorting page, redirect
+      if (pathname !== "/sorting") {
+        url.pathname = "/sorting";
+        return NextResponse.redirect(url);
+      }
+    }
+  }
 
   // Exception for the error page : Production issue on Google Sign in
   if (pathname === "/api/auth/error" && session) {

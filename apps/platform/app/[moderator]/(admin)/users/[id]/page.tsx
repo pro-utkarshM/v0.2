@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { getUser } from "~/actions/dashboard.admin";
-import { getHostels } from "~/actions/hostel.core";
-import { UserContent, UserHeader, UserSidebar } from "./components";
+import {  UserHeader, UserSidebar } from "./components";
 
 interface PageProps {
   params: Promise<{
@@ -13,9 +12,8 @@ export default async function UpdateUserPage({ params }: PageProps) {
   const { id } = await params;
   
   // Parallel fetching for performance
-  const [user, hostelRes] = await Promise.all([
+  const [user] = await Promise.all([
     getUser(id),
-    getHostels()
   ]);
 
   if (!user) return notFound();
@@ -33,7 +31,7 @@ export default async function UpdateUserPage({ params }: PageProps) {
 
         {/* 3. Main Content: Forms & Sessions */}
         <main>
-             <UserContent user={user} hostels={hostelRes.data || []} />
+             {/* <UserContent user={user} hostels={hostelRes.data || []} /> */}
         </main>
       </div>
     </div>
