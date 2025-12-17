@@ -12,7 +12,7 @@ import { mailFetch } from "../lib/fetch-server";
 const VERIFY_EMAIL_PATH_PREFIX = "/auth/verify-mail";
 const RESET_PASSWORD_PATH_PREFIX = "/auth/reset-password";
 
-const baseUrl = new URL(process.env.BASE_URL);
+const baseUrl = new URL(process.env.BETTER_AUTH_URL || "http://localhost:3000");
 
 
 export const betterAuthOptions = {
@@ -82,7 +82,7 @@ export const betterAuthOptions = {
   emailVerification: {
     sendOnSignUp: true,
     sendVerificationEmail: async ({ user, url, token }, request) => {
-      const verification_url = new URL(process.env.BASE_URL as string);
+      const verification_url = new URL(process.env.BETTER_AUTH_URL as string);
       verification_url.pathname = VERIFY_EMAIL_PATH_PREFIX;
       verification_url.searchParams.set("token", token);
       try {

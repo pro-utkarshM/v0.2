@@ -45,7 +45,7 @@ export async function generateMetadata(
     title: `${post.title}`,
     description: post.content.slice(0, 100),
     openGraph: {
-      images: [`${process.env.BASE_URL}/${CATEGORY_IMAGES[post.category]}`],
+      images: [`${process.env.BETTER_AUTH_URL}/${CATEGORY_IMAGES[post.category]}`],
     },
   };
 }
