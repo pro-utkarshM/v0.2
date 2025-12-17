@@ -138,7 +138,9 @@ export const betterAuthOptions = {
   trustedOrigins: [
     "http://localhost:3000",
     "http://*.vercel.app",
-    "*.vercel.app"
+    "*.vercel.app",
+    "https://v0-2-ecosystem.vercel.app",
+    process.env.BETTER_AUTH_URL
 
   ],
   // trustedOrigins: [appConfig.url, `https://${appConfig.appDomain}`,`https://*.nith.eu.org`],
